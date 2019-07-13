@@ -8,7 +8,6 @@ const app = {
 
 const appRoot = document.getElementById('app')
 
-
 const handleSubmit = (event) => {
   event.preventDefault()
 
@@ -18,41 +17,18 @@ const handleSubmit = (event) => {
     app.options.push(option)
     event.target.elements.option.value = ''
   }
-
   renderApp();
 }
 
-
-
-
-/*
-let count = 0;
-const addOne = () => {
-  count++
-  renderApp()
-}
-
-const takeOne = () => {
-  count--
-  renderApp()
-}
-
-const reset = () => {
-  count = 0
-  renderApp()
-}
-
-*/
-
 const clearList = () => {
-
   app.options = []
   renderApp()
 
 }
 
-const makeDecision = () => {
-  const randomNum = Math.floor(Math.random() * app.options.length) 
+const onMakeDecision = () => {
+  const randomNum = Math.floor(Math.random() * app.options.length)
+  const option = app.options[randomNum]
   console.log(randomNum)
 }
 
@@ -63,7 +39,7 @@ const renderApp = () => {
       {app.subtitle && <p>{app.subtitle}</p>}
       {(app.options.length > 0) ? <p>Here are your options</p> : <p> No options found </p>}
 
-      <button onClick={makeDecision}>What should I do? </button>
+      <button disabled={app.options.length === 0} onClick={onMakeDecision}>What should I do? </button>
       <button onClick={clearList}> Remove All </button>
       <p>{app.options.length}</p>
       <ol>
