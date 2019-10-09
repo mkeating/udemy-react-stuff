@@ -2,14 +2,15 @@
   "name": "indecision-app",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Andrew Mead",
   "license": "MIT",
   "dependencies": {
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1"
   },
   "scripts": {
-    "dev": "live-server public",
-    "build": "babel src/app.js --out-file=public/scripts/app.js  --presets=env,react --watch",
-    "build-test": "babel src/$NAME --out-file=public/scripts/app.js  --presets=env,react --watch"
-  }
+   "dev": "live-server public",
+   "build": "babel src/app.js --out-file=public/scripts/app.js  --presets=env,react --watch",
+   "build-test": "babel src/$NAME --out-file=public/scripts/app.js  --presets=env,react --watch"
+ }
 }
